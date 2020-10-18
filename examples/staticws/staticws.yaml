@@ -19,4 +19,17 @@ spec:
         image: sim007/staticws:latest
         #imagePullPolicy: Always
         ports:
-        -  containerPort: 80 
+        -  containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: staticws-service
+spec:
+  selector:
+    app: staticws
+  ports:
+  - protocol: TCP
+    port: 4223
+    targetPort: 80
+  type: LoadBalancer 
