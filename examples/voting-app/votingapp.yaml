@@ -80,6 +80,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 4500
+  - port: 80
   selector:
     app: azure-vote-front
